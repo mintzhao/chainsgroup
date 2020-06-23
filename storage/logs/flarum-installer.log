@@ -1,0 +1,55 @@
+[2020-06-21 14:39:05] Flarum Installer.ERROR: PDOException: SQLSTATE[HY000] [1049] Unknown database 'flarum' in /home/mintzhao/文档/源代码/flarum/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:27
+Stack trace:
+#0 /home/mintzhao/文档/源代码/flarum/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(27): PDO->__construct('mysql:host=127....', 'root', '', Array)
+#1 /home/mintzhao/文档/源代码/flarum/vendor/illuminate/database/Connectors/Connector.php(67): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=127....', 'root', NULL, Array)
+#2 /home/mintzhao/文档/源代码/flarum/vendor/illuminate/database/Connectors/Connector.php(46): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=127....', 'root', NULL, Array)
+#3 /home/mintzhao/文档/源代码/flarum/vendor/illuminate/database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=127....', Array, Array)
+#4 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Steps/ConnectToDatabase.php(38): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#5 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Pipeline.php(78): Flarum\Install\Steps\ConnectToDatabase->run()
+#6 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Pipeline.php(57): Flarum\Install\Pipeline->runStep(Object(Closure))
+#7 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(110): Flarum\Install\Pipeline->run()
+#8 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(94): Flarum\Install\Console\InstallCommand->runPipeline(Object(Flarum\Install\Pipeline))
+#9 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(71): Flarum\Install\Console\InstallCommand->install()
+#10 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Console/AbstractCommand.php(37): Flarum\Install\Console\InstallCommand->fire()
+#11 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Command/Command.php(255): Flarum\Console\AbstractCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(1018): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(271): Symfony\Component\Console\Application->doRunCommand(Object(Flarum\Install\Console\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(147): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Console/Server.php(44): Symfony\Component\Console\Application->run()
+#16 /home/mintzhao/文档/源代码/flarum/flarum(24): Flarum\Console\Server->listen()
+#17 {main}
+
+Next Doctrine\DBAL\Driver\PDOException: SQLSTATE[HY000] [1049] Unknown database 'flarum' in /home/mintzhao/文档/源代码/flarum/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:31
+Stack trace:
+#0 /home/mintzhao/文档/源代码/flarum/vendor/illuminate/database/Connectors/Connector.php(67): Doctrine\DBAL\Driver\PDOConnection->__construct('mysql:host=127....', 'root', NULL, Array)
+#1 /home/mintzhao/文档/源代码/flarum/vendor/illuminate/database/Connectors/Connector.php(46): Illuminate\Database\Connectors\Connector->createPdoConnection('mysql:host=127....', 'root', NULL, Array)
+#2 /home/mintzhao/文档/源代码/flarum/vendor/illuminate/database/Connectors/MySqlConnector.php(24): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=127....', Array, Array)
+#3 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Steps/ConnectToDatabase.php(38): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#4 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Pipeline.php(78): Flarum\Install\Steps\ConnectToDatabase->run()
+#5 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Pipeline.php(57): Flarum\Install\Pipeline->runStep(Object(Closure))
+#6 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(110): Flarum\Install\Pipeline->run()
+#7 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(94): Flarum\Install\Console\InstallCommand->runPipeline(Object(Flarum\Install\Pipeline))
+#8 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(71): Flarum\Install\Console\InstallCommand->install()
+#9 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Console/AbstractCommand.php(37): Flarum\Install\Console\InstallCommand->fire()
+#10 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Command/Command.php(255): Flarum\Console\AbstractCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(1018): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(271): Symfony\Component\Console\Application->doRunCommand(Object(Flarum\Install\Console\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(147): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Console/Server.php(44): Symfony\Component\Console\Application->run()
+#15 /home/mintzhao/文档/源代码/flarum/flarum(24): Flarum\Console\Server->listen()
+#16 {main}
+
+Next Flarum\Install\StepFailed: Step failed in /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Pipeline.php:85
+Stack trace:
+#0 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Pipeline.php(57): Flarum\Install\Pipeline->runStep(Object(Closure))
+#1 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(110): Flarum\Install\Pipeline->run()
+#2 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(94): Flarum\Install\Console\InstallCommand->runPipeline(Object(Flarum\Install\Pipeline))
+#3 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Install/Console/InstallCommand.php(71): Flarum\Install\Console\InstallCommand->install()
+#4 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Console/AbstractCommand.php(37): Flarum\Install\Console\InstallCommand->fire()
+#5 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Command/Command.php(255): Flarum\Console\AbstractCommand->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(1018): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(271): Symfony\Component\Console\Application->doRunCommand(Object(Flarum\Install\Console\InstallCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /home/mintzhao/文档/源代码/flarum/vendor/symfony/console/Application.php(147): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /home/mintzhao/文档/源代码/flarum/vendor/flarum/core/src/Console/Server.php(44): Symfony\Component\Console\Application->run()
+#10 /home/mintzhao/文档/源代码/flarum/flarum(24): Flarum\Console\Server->listen()
+#11 {main}  

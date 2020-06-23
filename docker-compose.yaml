@@ -1,0 +1,32 @@
+version: "3.1"
+services:
+
+  mysql:
+    image: mariadb:10.4.8-bionic
+    container_name: mysql
+    restart: always
+    volumes:
+      - /root/flarum/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: flarum
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 18080:8080
+    depends_on:
+      - mysql
+
+  server:
+    image: flarum
+    container_name: server
+    volumes:
+      - /root/flarum/config.php:/var/www/config.php
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - mysql
